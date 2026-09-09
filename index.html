@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="theme-color" content="#2563eb"><title>English.com — Aprende inglés</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar"><div class="brand"><span class="logo">E</span><div><strong>English.com</strong><small>Learn • Practice • Improve</small></div></div><button id="langBtn" class="ghost">🇪🇸 ES / 🇬🇧 EN</button></header>
+<div class="layout">
+<aside class="sidebar"><nav>
+<button class="nav active" data-section="home">🏠 <span>Inicio</span></button>
+<button class="nav" data-section="vocab">📚 <span>Vocabulario</span></button>
+<button class="nav" data-section="flashcards">🃏 <span>Flashcards</span></button>
+<button class="nav" data-section="grammar">📖 <span>Gramática</span></button>
+<button class="nav" data-section="phrases">💬 <span>Frases</span></button>
+<button class="nav" data-section="quiz">📝 <span>Quiz</span></button>
+<button class="nav" data-section="listening">🎧 <span>Listening</span></button>
+<button class="nav" data-section="progress">📊 <span>Progreso</span></button>
+</nav><div class="side-tip">🎯 <b>Meta diaria</b><span id="sideGoal">0 / 10</span><div class="mini-progress"><i id="sideBar"></i></div></div></aside>
+<main>
+<section id="home" class="section active"><div class="hero"><div><span class="eyebrow">TU CENTRO DE INGLÉS</span><h1>Aprende inglés de forma <span>simple y divertida.</span></h1><p>Vocabulario, gramática, pronunciación y quizzes en un solo lugar.</p><button class="primary" data-go="vocab">Empezar a estudiar →</button></div><div class="hero-card"><div class="streak">🔥 <b id="streak">0</b> días</div><div class="ring"><strong id="goalPct">0%</strong><small>meta diaria</small></div><p>¡Sigue así!</p></div></div>
+<div class="stats"><div><b id="learned">0</b><span>Palabras aprendidas</span></div><div><b id="quizScore">0</b><span>Mejor quiz</span></div><div><b id="studyDays">0</b><span>Días estudiados</span></div><div><b id="points">0</b><span>Puntos</span></div></div>
+<div class="section-head"><div><span class="eyebrow">CONTINÚA</span><h2>Tu ruta de aprendizaje</h2></div></div><div class="cards"><button class="feature" data-go="flashcards"><span>🃏</span><b>Flashcards</b><small>Memoriza palabras con tarjetas interactivas.</small></button><button class="feature" data-go="grammar"><span>📖</span><b>Gramática</b><small>Explicaciones cortas y ejemplos claros.</small></button><button class="feature" data-go="quiz"><span>🏆</span><b>Quiz</b><small>Pon a prueba lo que has aprendido.</small></button></div></section>
+<section id="vocab" class="section"><div class="section-head"><div><span class="eyebrow">VOCABULARY</span><h2>Construye tu vocabulario</h2><p>Busca y practica palabras frecuentes.</p></div><input id="search" class="search" placeholder="🔎 Buscar palabra..." /></div><div id="vocabGrid" class="vocab-grid"></div></section>
+<section id="flashcards" class="section"><div class="section-head"><div><span class="eyebrow">FLASHCARDS</span><h2>Aprende con tarjetas</h2><p>Haz clic en la tarjeta para ver la traducción.</p></div></div><div class="flash-wrap"><button class="arrow" id="prevCard">‹</button><div id="flashcard" class="flashcard"><div class="front"><small>ENGLISH</small><strong id="fcWord">Hello</strong><span id="fcExample">Hello, how are you?</span><i>Haz clic para voltear</i></div><div class="back"><small>ESPAÑOL</small><strong id="fcEs">Hola</strong><span id="fcExampleEs">Hola, ¿cómo estás?</span><i>Haz clic para volver</i></div></div><button class="arrow" id="nextCard">›</button></div><div class="center"><button class="secondary" id="knownBtn">✓ Ya la conozco</button><button class="primary" id="speakBtn">🔊 Escuchar</button></div></section>
+<section id="grammar" class="section"><div class="section-head"><div><span class="eyebrow">GRAMMAR</span><h2>Gramática sin complicaciones</h2><p>Aprende una regla y úsala inmediatamente.</p></div></div><div id="grammarList" class="grammar-list"></div></section>
+<section id="phrases" class="section"><div class="section-head"><div><span class="eyebrow">USEFUL PHRASES</span><h2>Frases útiles</h2><p>Expresiones que puedes usar en conversaciones.</p></div></div><div id="phraseGrid" class="phrase-grid"></div></section>
+<section id="quiz" class="section"><div class="section-head"><div><span class="eyebrow">QUIZ</span><h2>Modo examen</h2><p>Responde 10 preguntas y consigue puntos.</p></div></div><div class="quiz-box"><div class="quiz-top"><span id="qProgress">Pregunta 1 de 10</span><b id="qScore">0 pts</b></div><div class="qbar"><i id="qBar"></i></div><h3 id="question">Cargando...</h3><div id="answers" class="answers"></div><button id="nextQ" class="primary" disabled>Siguiente →</button><div id="quizResult" class="quiz-result hidden"></div></div></section>
+<section id="listening" class="section"><div class="section-head"><div><span class="eyebrow">LISTENING & SPEAKING</span><h2>Escucha y practica</h2><p>Usa la voz integrada de tu navegador para escuchar inglés.</p></div></div><div class="listen-card"><div class="listen-icon">🎧</div><h3>Practice pronunciation</h3><p id="listenText">Good morning! How are you today?</p><button class="primary" id="listenBtn">🔊 Reproducir en inglés</button><div class="speech-note">💡 Repite la frase en voz alta y compara tu pronunciación.</div></div></section>
+<section id="progress" class="section"><div class="section-head"><div><span class="eyebrow">PROGRESS</span><h2>Tu progreso</h2><p>Todo se guarda automáticamente en este dispositivo.</p></div></div><div class="progress-panel"><div class="big-number" id="progressPct">0%</div><div><h3>Meta diaria</h3><p>Completa 10 actividades al día.</p><div class="progress-line"><i id="progressLine"></i></div></div></div><div class="achievement-grid"><div>🔥<b id="achStreak">0</b><span>Racha</span></div><div>📚<b id="achWords">0</b><span>Palabras</span></div><div>🏆<b id="achPoints">0</b><span>Puntos</span></div><div>📝<b id="achBest">0</b><span>Mejor quiz</span></div></div><button class="danger" id="resetBtn">Reiniciar progreso</button></section>
+</main></div><footer>English.com • Tu progreso se guarda localmente en tu navegador.</footer><script src="script.js"></script>
+</body></html>
